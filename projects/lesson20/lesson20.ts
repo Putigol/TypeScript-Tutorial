@@ -1,5 +1,5 @@
-let age: number = 20;
-if (age > 17) {
+let age11: number = 20;
+if (age11 > 17) {
   console.log("You can drive");
 } else {
   console.log("You can't drive");

@@ -1,4 +1,5 @@
-function addNumberOrString(a: number | string, b: number | string) {
+type NumStriBoo = number | string | boolean;
+function addNumberOrString(a: NumStriBoo, b: number | string) {
   if (typeof a === "number" && typeof b === "number") {
     return a + b;
   }

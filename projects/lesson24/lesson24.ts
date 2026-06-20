@@ -1,10 +1,10 @@
-//Optional Parameters
-const sum5 = (x: number, y: number, z?: number): number => {
-  if (z) {
-    return x + y + z;
+//Default Parameters
+const sum24 = (soA: number, soB: boolean = false, soC: number) => {
+  if (soB === false) {
+    return soA + soC;
   }
-  return x + y;
+  if (soB) {
+    return soA - soC;
+  }
 };
-
-console.log(sum5(1, 2, 3));
-console.log(sum5(1, 2));
+console.log(sum24(1, true, 2));

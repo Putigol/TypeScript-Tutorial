@@ -1,12 +1,8 @@
-let counter = 0;
-while (counter < 10) {
-  console.log(counter);
-  counter += 1;
-}
-
-let counter2 = 3;
-while (counter2 < 10) {
+let counter2 = 0;
+do {
   console.log(counter2);
-  if (counter2 % 2 === 0) break;
-  counter2 += 1;
-}
+  if (counter2 % 2 === 1) {
+    break;
+  }
+  counter2++;
+} while (counter2 < 10);

@@ -9,5 +9,13 @@ class Employee {
   }
 }
 
-let emp = new Employee("1", "thinh");
+class SalesEmployee extends Employee {
+  private department: string;
+  constructor(empCode: string, empName: string, department: string) {
+    super(empCode, empName);
+    this.department = department;
+  }
+}
+
+let emp = new SalesEmployee("123", "Thinh", "IT");
 console.log(emp);

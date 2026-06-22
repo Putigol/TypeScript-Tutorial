@@ -1,34 +1,11 @@
-//Inheritance
-class Person28 {
-  protected firstName: string;
-  protected lastName: string;
-  constructor(firstName: string, lastName: string) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-  getFullName(): string {
-    return this.firstName + " " + this.lastName;
-  }
-
-  describe(): string {
-    return "Hiện đang làm";
+//Static
+class Circle {
+  static PI: number = 3.14;
+  static calculateCircumArea(diameter: number): number {
+    return this.PI * diameter * diameter;
   }
 }
-
-class Employee28 extends Person28 {
-  private jobTitle: string;
-  constructor(firstName: string, lastName: string, jobTitle: string) {
-    //gọi constructor từ class cha
-    super(firstName, lastName);
-    this.jobTitle = jobTitle;
-  }
-
-  //overwrite
-  describe(): string {
-    return `${super.describe()} ${this.jobTitle}`;
-  }
-}
-
-let staff = new Employee28("Thinh", "Nguyen", "IT");
-console.log(staff.getFullName());
-console.log(staff.describe());
+//Không cần khởi tạo object vẫn truy cập được thuộc tính static
+console.log(Circle.PI);
+//Static method chỉ có thể được truy cập bằng class
+console.log(Circle.calculateCircumArea(10));

@@ -1,22 +1,34 @@
-class Person27 {
-  private age: number;
-  public firstName: string;
-  public lastName: string;
-  constructor(age: number, firstName: string, lastName: string) {
-    this.age = age;
+//Inheritance
+class Person28 {
+  protected firstName: string;
+  protected lastName: string;
+  constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
-  getAge(): number {
-    return this.age;
+  getFullName(): string {
+    return this.firstName + " " + this.lastName;
   }
 
-  setAge(age: number): void {
-    if (age < 0 || age > 100) throw new Error("Invalid age");
-    this.age = age;
+  describe(): string {
+    return "Hiện đang làm";
   }
 }
 
-let person = new Person27(20, "thinh", "nam");
-person.setAge(30);
-console.log(person.getAge());
+class Employee28 extends Person28 {
+  private jobTitle: string;
+  constructor(firstName: string, lastName: string, jobTitle: string) {
+    //gọi constructor từ class cha
+    super(firstName, lastName);
+    this.jobTitle = jobTitle;
+  }
+
+  //overwrite
+  describe(): string {
+    return `${super.describe()} ${this.jobTitle}`;
+  }
+}
+
+let staff = new Employee28("Thinh", "Nguyen", "IT");
+console.log(staff.getFullName());
+console.log(staff.describe());
